@@ -3,7 +3,7 @@ const displaySpinner = (display) => {
   document.getElementById("spinner").style.display = display;
 };
 
-//displaying phone section
+//Fetching data
 document.getElementById("button-addon2").addEventListener("click", () => {
   let searchInput = document.getElementById("search-input");
   const searchText = searchInput.value.toLowerCase();
@@ -21,6 +21,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
     document.getElementById("search-input").value = "";
   }
 });
+//displaying phone section
 const displayPhone = (result, phones) => {
   if (result.status === false) {
     displaySpinner("none");
