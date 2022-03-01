@@ -6,3 +6,9 @@
   margin-top: 5px;
   font-size: 16px;
 }
+.title {
+  font-weight: 600;
+}
+#display-phone-details {
+  margin-bottom: 30px;
+}
