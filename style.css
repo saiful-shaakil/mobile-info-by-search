@@ -1,0 +1,8 @@
+.more-button {
+  padding: 5px 20px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid blue;
+  margin-top: 5px;
+  font-size: 16px;
+}
