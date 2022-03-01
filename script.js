@@ -1,3 +1,9 @@
+//Spinner
+const displaySpinner = (display) => {
+  document.getElementById("spinner").style.display = display;
+};
+
+//displaying phone section
 document.getElementById("button-addon2").addEventListener("click", () => {
   let searchInput = document.getElementById("search-input");
   const searchText = searchInput.value.toLowerCase();
@@ -6,6 +12,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   } else {
     displaySection.textContent = "";
     phoneDetailsSection.textContent = "";
+    displaySpinner("block");
     fetch(
       `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     )
@@ -16,6 +23,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
 });
 const displayPhone = (result, phones) => {
   if (result.status === false) {
+    displaySpinner("none");
     displaySection.innerHTML = `
     <h1 class="text-center mx-auto"> 404 </br> Not Found </h1>
     `;
@@ -36,9 +44,11 @@ const displayPhone = (result, phones) => {
                 </div>
         `;
       displaySection.appendChild(newPhone);
+      displaySpinner("none");
     });
   }
 };
+//Phone details
 const phoneDetails = (id) => {
   fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
     .then((res) => res.json())

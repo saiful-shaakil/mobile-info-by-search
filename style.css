@@ -12,3 +12,11 @@
 #display-phone-details {
   margin-bottom: 60px;
 }
+#spinner {
+  display: none;
+}
+.spinner-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
