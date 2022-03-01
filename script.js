@@ -51,6 +51,8 @@ const displayPhone = (result, phones) => {
 };
 //Phone details
 const phoneDetails = (id) => {
+  phoneDetailsSection.textContent = "";
+  displaySpinner("block");
   fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
     .then((res) => res.json())
     .then((result) => displayPhoneDetails(result.data));
@@ -82,6 +84,7 @@ const displayPhoneDetails = (phone) => {
             </div>
     `;
   phoneDetailsSection.appendChild(mobile);
+  displaySpinner("none");
 };
 
 //declaring section
